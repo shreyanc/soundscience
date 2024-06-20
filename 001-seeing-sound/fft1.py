@@ -47,3 +47,8 @@ plt.xlim(0, fs/2)  # Only show positive frequencies
 plt.tight_layout()
 # plt.show()
 plt.savefig('ft.png', dpi=300)
+
+# Print phases at frequencies
+f = [50, 120, 300]
+f = [int(fs/2+i) for i in f]
+[np.round(phase[fi], 3) for fi in f]
