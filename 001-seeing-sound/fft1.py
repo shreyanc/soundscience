@@ -14,8 +14,8 @@ phases = [0, np.pi/4, np.pi/2]
 wave = sum(a * np.exp(1j*(2 * np.pi * f * t + p)) for a, f, p in zip(amplitudes, frequencies, phases))
 
 # Compute the Fourier Transform
-wave_fft = np.fft.fft(wave)
-frequencies = np.fft.fftfreq(len(wave), 1/fs)
+wave_fft = np.fft.fftshift(np.fft.fft(wave))
+frequencies = np.fft.fftshift(np.fft.fftfreq(len(wave), 1/fs))
 
 # Compute magnitude and phase
 magnitude = np.abs(wave_fft)
